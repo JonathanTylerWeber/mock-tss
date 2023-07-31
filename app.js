@@ -15,13 +15,18 @@ function vowelFrequency(str) {
     let obj = {};
     let vowels = 'aeiou';
     for (let i = 0; i < str.length; i++) {
-      if (vowels.includes(str[i])) {
-        if (obj[str[i]]) {
-          obj[str[i]]++;
-        } else {
-          obj[str[i]] = 1;
+        if (vowels.includes(str[i])) {
+            if (obj[str[i]]) {
+                obj[str[i]]++;
+            } 
+            else {
+                obj[str[i]] = 1;
+            }
         }
-      }
     }
-    return obj;
-  }
+    let returnString = '';
+    for (let key in obj){
+        returnString += key + obj[key];
+    }
+    return returnString
+}
